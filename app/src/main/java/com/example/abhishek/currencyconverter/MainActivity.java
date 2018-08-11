@@ -7,6 +7,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final double USD_TO_RS   = 69.10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +20,10 @@ public class MainActivity extends AppCompatActivity {
         EditText usdEditText = findViewById(R.id.usdText);
         EditText rsEditText = findViewById(R.id.rsText);
 
- //       double result = (Double) usdEditText.getText().toString();
+        Double usdAmount = Double.parseDouble(usdEditText.getText().toString());
+        Double rsAmount = usdAmount * USD_TO_RS;
+
+        rsEditText.setText(rsAmount.toString());
 
 
     }
